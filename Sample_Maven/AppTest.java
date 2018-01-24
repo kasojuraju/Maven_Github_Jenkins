@@ -3,6 +3,7 @@ package com.test.Sample_Maven;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -20,5 +21,9 @@ public class AppTest{
 		d.get("https://www.javatpoint.com/java-arraylist");
 		System.out.println("Sample Test annotation for Maven, Github and Jenkins configuration");
 		d.findElement(By.xpath("//*[@id='smoothmenu1']/ul/li[6]/a")).click();
+	}
+	@AfterClass
+	public void browserClose(){
+		d.close();
 	}
 }
